@@ -143,13 +143,13 @@ class _MovieCast extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal:20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.start,
+          Row(
             children: [
-              Column(crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Text(
                   'Kelly Marcel',
                   style: TextStyle(
@@ -162,12 +162,10 @@ class _MovieCast extends StatelessWidget {
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
                 ),
               ]),
-              //SizedBox(width: 20.0),
               Expanded(
-                child: Column(
-                children: [
+                child: Column(children: [
                   Text(
-                    'Kelly Marcel',
+                    'Todd McFarlane',
                     // textAlign: TextAlign.left,
                     style: TextStyle(
                         color: Colors.white,
@@ -175,18 +173,88 @@ class _MovieCast extends StatelessWidget {
                         fontWeight: FontWeight.w700),
                   ),
                   Text(
-                    'Screenplay, Story',
+                    'Characters',
                     style: TextStyle(color: Colors.white, fontSize: 14.0),
                   ),
                 ]),
               ),
             ],
           ),
-          Row(
-            children: [],
+          SizedBox(height: 20.0),
+          Row(children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(
+                'Kelly Marcel',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w700),
+              ),
+              Text(
+                'Screenplay, Story',
+                style: TextStyle(color: Colors.white, fontSize: 14.0),
+              ),
+            ]),
+            Expanded(
+              child: Column(children: [
+                Text(
+                  'Todd McFarlane',
+                  // textAlign: TextAlign.left,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w700),
+                ),
+                Text(
+                  'Characters',
+                  style: TextStyle(color: Colors.white, fontSize: 14.0),
+                ),
+              ]),
+            ),
+          ]),
+          SizedBox(height: 20.0),
+          Row(children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(
+                'Kelly Marcel',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w700),
+              ),
+              Text(
+                'Screenplay, Story',
+                style: TextStyle(color: Colors.white, fontSize: 14.0),
+              ),
+            ]),
+            Expanded(
+              child: Column(children: [
+                Text(
+                  'Todd McFarlane',
+                  // textAlign: TextAlign.left,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w700),
+                ),
+                Text(
+                  'Characters',
+                  style: TextStyle(color: Colors.white, fontSize: 14.0),
+                ),
+              ]),
+            ),
+          ]),
+          SizedBox(height: 20.0),
+          Text(
+            'Kelly Marcel',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 16.0,
+                fontWeight: FontWeight.w700),
           ),
-          Row(
-            children: [],
+          Text(
+            'Screenplay, Story',
+            style: TextStyle(color: Colors.white, fontSize: 14.0),
           ),
         ],
       ),
