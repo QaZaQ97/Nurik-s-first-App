@@ -1,6 +1,6 @@
-# untitled
+# TMDB
 
-A new Flutter project.
+TMDb - Movies & TvShows the list of movies, tv shows and actors from the API provided by https://www.themoviedb.org.
 
 ## Getting Started
 
