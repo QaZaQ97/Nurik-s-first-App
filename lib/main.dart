@@ -18,15 +18,15 @@ class MyApp extends StatelessWidget {
           backgroundColor: AppColor.mainDarkColor,
           centerTitle: true,
         ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
             backgroundColor: AppColor.mainDarkColor),
       ),
       routes: {
         '/auth': (context) => const AuthWidget(),
         '/main_screen': (context) => const MainScreenWidget(),
-        '/main_screen/movie_details': (context) => MovieDetailsWidget(),
+        '/main_screen/movie_details': (context) => const MovieDetailsWidget(),
       },
-      initialRoute: '/main_screen/movie_details',
+      initialRoute: '/main_screen',
     );
   }
 }

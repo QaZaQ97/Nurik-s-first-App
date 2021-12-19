@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:untitled/widgets/main_screen/main_screen_widget.dart';
 
 class AuthWidget extends StatefulWidget {
   const AuthWidget({Key? key}) : super(key: key);
@@ -37,24 +36,24 @@ class _HeaderWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          _FormWidget(),
-          SizedBox(height: 28.0),
+         const _FormWidget(),
+          const SizedBox(height: 28.0),
           Text(
               'In order to use the editing and rating capabilities of TMDB, as well as get personal recommendations you will need to login to your account. If you do not have an account, registering for an account is free and simple.',
               style: textStyle),
           TextButton(
             onPressed: () {},
-            child: Text('Register'),
+            child: const Text('Register'),
             style: ButtonStyle(
               foregroundColor: MaterialStateProperty.all(blueColor),
             ),
           ),
-          SizedBox(height: 28.0),
+         const SizedBox(height: 28.0),
           Text('If you signed up but didn\'t get your verification email.',
               style: textStyle),
           TextButton(
             onPressed: () {},
-            child: Text('Verify email'),
+            child: const Text('Verify email'),
             style: ButtonStyle(
               foregroundColor: MaterialStateProperty.all(blueColor),
             ),
@@ -66,7 +65,7 @@ class _HeaderWidget extends StatelessWidget {
 }
 
 class _FormWidget extends StatefulWidget {
-  _FormWidget({Key? key}) : super(key: key);
+ const _FormWidget({Key? key}) : super(key: key);
 
   @override
   __FormWidgetState createState() => __FormWidgetState();
@@ -109,29 +108,29 @@ Navigator.of(context).pushReplacementNamed('/main_screen');
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        SizedBox(height: 26.0),
+       const SizedBox(height: 26.0),
         if (errorText != null)
           ...[Text(
             errorText,
-            style: TextStyle(color: Colors.red, fontSize: 18),
-          ),SizedBox(height: 18),],
+            style: const TextStyle(color: Colors.red, fontSize: 18),
+          ), const SizedBox(height: 18),],
         Text('Username', style: textStyle),
-        SizedBox(height: 6.0),
+       const SizedBox(height: 6.0),
         TextField(
             controller: _loginTextController, decoration: textFieldDecoration),
-        SizedBox(height: 16.0),
+       const SizedBox(height: 16.0),
         Text('Password', style: textStyle),
-        SizedBox(height: 6.0),
+       const SizedBox(height: 6.0),
         TextField(
             controller: _passwordTextController,
             decoration: textFieldDecoration),
-        SizedBox(height: 28.0),
+       const SizedBox(height: 28.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             ElevatedButton(
               onPressed: _auth,
-              child: Text(
+              child:const Text(
                 'Login',
                 style: TextStyle(fontWeight: FontWeight.w700),
               ),
@@ -140,10 +139,10 @@ Navigator.of(context).pushReplacementNamed('/main_screen');
                 backgroundColor: MaterialStateProperty.all(blueColor),
               ),
             ),
-            SizedBox(width: 28.0),
+           const SizedBox(width: 28.0),
             TextButton(
               onPressed: _password,
-              child: Text('Reset password'),
+              child:const Text('Reset password'),
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all(blueColor),
               ),

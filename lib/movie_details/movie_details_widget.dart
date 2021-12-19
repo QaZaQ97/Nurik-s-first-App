@@ -1,10 +1,8 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, prefer_const_constructors_in_immutables
-
 import 'package:flutter/material.dart';
 import 'package:untitled/resources/app_images.dart';
 
 class MovieDetailsWidget extends StatefulWidget {
-  MovieDetailsWidget({Key? key}) : super(key: key);
+  const MovieDetailsWidget({Key? key}) : super(key: key);
 
   @override
   _MovieDetailsWidgetState createState() => _MovieDetailsWidgetState();
@@ -14,34 +12,51 @@ class _MovieDetailsWidgetState extends State<MovieDetailsWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(24, 14, 15, 1),
-      appBar: AppBar(title: Text('TMDB')),
-      body: Column(
-        children: [
-          _MoviePosterAndImage(),
-          _MovieTitle(),
-          _MovieInfo(),
-          _MovieDesc(),
-          _MovieCast(),
-        ],
+      appBar: AppBar(title:const Text('TMDB')),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+           const _MovieMainBlock(),
+            Container(color: Colors.red,
+            width:300,height:300),
+          ],
+        ),
       ),
     );
   }
 }
 
-class _MoviePosterAndImage extends StatelessWidget {
-  _MoviePosterAndImage({Key? key}) : super(key: key);
+class _MovieMainBlock extends StatelessWidget {
+  const _MovieMainBlock({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      color: const Color.fromRGBO(24, 14, 15, 1),
+      child: Column(children: const [
+       _MoviePosterAndImage(),
+        _MovieTitle(),
+       _MovieInfo(),
+       _MovieDesc(),
+       _MovieCast(),
+      ]),
+    );
+  }
+}
+
+class _MoviePosterAndImage extends StatelessWidget {
+ const _MoviePosterAndImage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(),
       child: Stack(
         children: [
           Image.asset(Images.venomPoster),
           Container(
-            decoration: BoxDecoration(
-              boxShadow: [
+            decoration: const BoxDecoration(
+             boxShadow: [
                 BoxShadow(
                   color: Color.fromRGBO(24, 14, 15, 1),
                   spreadRadius: 35.0,
@@ -50,7 +65,7 @@ class _MoviePosterAndImage extends StatelessWidget {
                 ),
               ],
             ),
-            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 15.0),
+            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 15.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12.0),
               child: Image.asset(
@@ -68,14 +83,14 @@ class _MoviePosterAndImage extends StatelessWidget {
 }
 
 class _MovieTitle extends StatelessWidget {
-  _MovieTitle({Key? key}) : super(key: key);
+ const _MovieTitle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 20.0),
+      padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 20.0),
       child: RichText(
-        text: TextSpan(
+        text: const TextSpan(
             text: 'Venom: Let There Be Carnage',
             style: TextStyle(
                 color: Colors.white,
@@ -98,8 +113,8 @@ class _MovieInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
+    return const Padding(
+      padding: EdgeInsets.all(10.0),
       child: Text(
         '10/01/2021 (US) * 1h 37m \n Science Fiction,Action,Adventure',
         textAlign: TextAlign.center,
@@ -118,8 +133,8 @@ class _MovieDesc extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
+        children: const [
+         Text(
             'Overview',
             style: TextStyle(
                 color: Colors.white,
@@ -149,7 +164,7 @@ class _MovieCast extends StatelessWidget {
         children: [
           Row(
             children: [
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
                 Text(
                   'Kelly Marcel',
                   style: TextStyle(
@@ -163,10 +178,9 @@ class _MovieCast extends StatelessWidget {
                 ),
               ]),
               Expanded(
-                child: Column(children: [
+                child: Column(children: const [
                   Text(
                     'Todd McFarlane',
-                    // textAlign: TextAlign.left,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 16.0,
@@ -180,9 +194,9 @@ class _MovieCast extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20.0),
+         const SizedBox(height: 20.0),
           Row(children: [
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
               Text(
                 'Kelly Marcel',
                 style: TextStyle(
@@ -196,7 +210,7 @@ class _MovieCast extends StatelessWidget {
               ),
             ]),
             Expanded(
-              child: Column(children: [
+              child: Column(children: const [
                 Text(
                   'Todd McFarlane',
                   // textAlign: TextAlign.left,
@@ -212,9 +226,9 @@ class _MovieCast extends StatelessWidget {
               ]),
             ),
           ]),
-          SizedBox(height: 20.0),
+         const SizedBox(height: 20.0),
           Row(children: [
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
               Text(
                 'Kelly Marcel',
                 style: TextStyle(
@@ -228,7 +242,7 @@ class _MovieCast extends StatelessWidget {
               ),
             ]),
             Expanded(
-              child: Column(children: [
+              child: Column(children: const [
                 Text(
                   'Todd McFarlane',
                   // textAlign: TextAlign.left,
@@ -244,15 +258,15 @@ class _MovieCast extends StatelessWidget {
               ]),
             ),
           ]),
-          SizedBox(height: 20.0),
-          Text(
+         const SizedBox(height: 20.0),
+         const Text(
             'Kelly Marcel',
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 16.0,
                 fontWeight: FontWeight.w700),
           ),
-          Text(
+         const Text(
             'Screenplay, Story',
             style: TextStyle(color: Colors.white, fontSize: 14.0),
           ),
@@ -261,3 +275,23 @@ class _MovieCast extends StatelessWidget {
     );
   }
 }
+
+
+// class _MovieActorListView extends StatefulWidget {
+//   const _MovieActorListView({ Key? key }) : super(key: key);
+
+//   @override
+//   __MovieActorListViewState createState() => __MovieActorListViewState();
+// }
+
+// class __MovieActorListViewState extends State<_MovieActorListView> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView.builder(
+//       itemExtent: 200,
+//       itemCount: 10,
+//       itemBuilder: (BuildContext context, int index) {
+// return [];
+//     });
+//   }
+// }

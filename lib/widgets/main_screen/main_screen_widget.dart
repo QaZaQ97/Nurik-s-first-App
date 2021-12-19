@@ -11,11 +11,11 @@ class MainScreenWidget extends StatefulWidget {
 class _MainScreenWidgetState extends State<MainScreenWidget> {
   int _selectedTab = 1;
   static final List<Widget> _widgetOptions = <Widget>[
-    Text(
+   const Text(
       'Home',
     ),
-  MovieList(),
-    Text(
+ const MovieList(),
+  const  Text(
       'TV Shows',
     ),
   ];
@@ -31,7 +31,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TMDB'),
+        title:const Text('TMDB'),
       ),
       body: Center(child: _widgetOptions[_selectedTab]),
       bottomNavigationBar: BottomNavigationBar(
