@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/model/movie.dart';
 import 'package:untitled/networking/movie.dart';
 import 'package:untitled/networking/networking.dart';
 import 'package:untitled/resources/app_images.dart';
@@ -81,21 +82,21 @@ class _MovieListState extends State<MovieList> {
   @override
   void initState() {
     super.initState();
-    loadData();
+    getMovieList();
     // _searchMovies();
     // _searchController.addListener((_searchMovies));
   }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<MoviesList>(
-        future: moviesList,
+    return FutureBuilder<Movies>(
+        future: getMovieList(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
               padding: const EdgeInsetsDirectional.only(top: 70.0),
               itemExtent: 150,
-              itemCount: snapshot.data!.movies.length,
+              itemCount: snapshot.data!.results!.length,
               itemBuilder: (context, index) {
                 // final movie = _filteredMovies[index];
                 return Padding(
@@ -122,8 +123,8 @@ class _MovieListState extends State<MovieList> {
                         ),
                         child: Row(
                           children: [
-                            Image.network(
-                                '${snapshot.data!.movies[index].posterPath}'),
+                            // Image.network(
+                            //     '${snapshot.data!.results![index].posterPath}'),
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsets.all(14.0),
@@ -131,17 +132,17 @@ class _MovieListState extends State<MovieList> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                        '${snapshot.data!.movies[index].description}',
+                                        '${snapshot.data!.results![index].title!}',
                                         style: TextStyle(fontSize: 16),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis),
-                                    Text('${snapshot.data!.movies[index].name}',
+                                    Text('${snapshot.data!.results![index].voteAverage!}',
                                         style: const TextStyle(
                                             fontSize: 14.4,
                                             color: Colors.grey)),
                                     const SizedBox(height: 24.0),
                                     Text(
-                                        '${snapshot.data!.movies[index].description}',
+                                        '${snapshot.data!.results![index].voteCount}',
                                         style: const TextStyle(fontSize: 14.4),
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis),
